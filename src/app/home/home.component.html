@@ -1,0 +1,44 @@
+<p>home works!</p>
+
+<div class="container">  
+
+   
+        <h1> Liste des Pokémons </h1>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let poke of pokemonList">
+        <div class="card mb-4">
+          
+          <img src="{{ poke.picture }}" class="card-img-top" alt="{{ poke.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ poke.name }}</h5>
+            <p class="card-text"> Type: {{ poke.types }}</p>
+            <p class="card-text"> Hp : {{ poke.hp }}</p>
+            <p class="card-text"> Cp : {{ poke.cp }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <h2> Ajouter un pokémon </h2>
+  <form (submit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nom du Pokémon</label>
+      <input type="text" id="name" [(ngModel)]="newPokemon.name" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="type">Type du Pokémon</label>
+      <input type="text" id="type" [(ngModel)]="newPokemon.type" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="type">Hp </label>
+        <input type="text" id="type" [(ngModel)]="newPokemon.hp" class="form-control" required>
+      </div>
+    
+    <button type="submit" class="btn btn-primary"> Ajouter Pokémon</button>
+  </form>
+  
+
+
